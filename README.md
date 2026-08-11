@@ -28,5 +28,7 @@ Todos os cinco CTAs usam o mesmo checkout e preservam os parâmetros `utm_*`. O 
 - `index.html`: página e copy completa;
 - `styles.css`: visual mobile-first;
 - `script.js`: checkout, UTMs, Pixel e CTA móvel;
+- `PRODUTO-CADASTRO.md`: nome e descrições prontas para cadastro;
 - `assets/images`: imagens usadas na página;
+- `assets/produto`: capa quadrada do produto;
 - `assets/criativos`: os 6 criativos quadrados de 1080 × 1080 px.
