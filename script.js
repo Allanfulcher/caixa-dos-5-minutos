@@ -1,6 +1,6 @@
 const CONFIG = {
-  checkoutUrl: "[COLAR_LINK_CHECKOUT]",
-  metaPixelId: "[COLAR_PIXEL_ID]",
+  checkoutUrl: "https://acesso.allanfulcher.com/checkout/caixa-5-minutos",
+  metaPixelId: "905104172223662",
   supportPhone: "(54) 99326-4627",
   sellerName: "Allan Fulcher Tecnologia"
 };
@@ -13,7 +13,10 @@ function buildCheckoutUrl() {
     const target = new URL(CONFIG.checkoutUrl);
     const source = new URLSearchParams(window.location.search);
     source.forEach((value, key) => {
-      if (key.toLowerCase().startsWith("utm_")) target.searchParams.set(key, value);
+      const normalizedKey = key.toLowerCase();
+      if (normalizedKey.startsWith("utm_") || normalizedKey === "fbclid") {
+        target.searchParams.set(key, value);
+      }
     });
     return target.toString();
   } catch {
@@ -45,7 +48,10 @@ function configurePage() {
     button.addEventListener("click", (event) => {
       track("InitiateCheckout", {
         content_name: "Caixa dos 5 Minutos",
+        content_ids: ["caixa-5-minutos"],
+        content_type: "product",
         cta_section: button.dataset.section,
+        num_items: 1,
         value: 27,
         currency: "BRL"
       });
@@ -65,7 +71,13 @@ function configurePage() {
     const observer = new IntersectionObserver(([entry]) => {
       if (!entry.isIntersecting || fired) return;
       fired = true;
-      track("ViewContent", { content_name: "Caixa dos 5 Minutos", value: 27, currency: "BRL" });
+      track("ViewContent", {
+        content_name: "Caixa dos 5 Minutos",
+        content_ids: ["caixa-5-minutos"],
+        content_type: "product",
+        value: 27,
+        currency: "BRL"
+      });
       observer.disconnect();
     }, { threshold: 0.35 });
     observer.observe(offer);

@@ -14,14 +14,14 @@ Depois abra `http://127.0.0.1:4173`.
 
 ## Configurar antes de vender
 
-Edite o objeto `CONFIG` no início de `script.js`:
+O objeto `CONFIG` no início de `script.js` está configurado com:
 
-- `checkoutUrl`: link real do checkout;
-- `metaPixelId`: ID numérico do Pixel da Meta;
+- `checkoutUrl`: `https://acesso.allanfulcher.com/checkout/caixa-5-minutos`;
+- `metaPixelId`: `905104172223662`;
 - `supportPhone`: telefone de suporte;
 - `sellerName`: nome ou razão social do vendedor.
 
-Todos os cinco CTAs usam o mesmo checkout e preservam os parâmetros `utm_*`. O Pixel dispara `PageView`, `ViewContent` e `InitiateCheckout`. O evento `Purchase` deve ser configurado e testado na página de confirmação do checkout.
+Todos os cinco CTAs usam o mesmo checkout e preservam os parâmetros `utm_*` e `fbclid`. O Pixel dispara `PageView`, `ViewContent` e `InitiateCheckout`. O evento `Purchase` deve ser configurado e testado na página de confirmação do checkout.
 
 ## Estrutura
 
