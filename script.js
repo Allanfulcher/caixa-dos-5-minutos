@@ -1,8 +1,8 @@
 const CONFIG = {
   checkoutUrl: "[COLAR_LINK_CHECKOUT]",
   metaPixelId: "[COLAR_PIXEL_ID]",
-  supportEmail: "[COLAR_EMAIL_SUPORTE]",
-  sellerName: "[COLAR_NOME_VENDEDOR]"
+  supportPhone: "(54) 99326-4627",
+  sellerName: "Allan Fulcher Tecnologia"
 };
 
 const isPlaceholder = (value) => !value || value.startsWith("[");
@@ -57,7 +57,7 @@ function configurePage() {
   });
 
   document.querySelectorAll('[data-config="seller"]').forEach((node) => { node.textContent = CONFIG.sellerName; });
-  document.querySelectorAll('[data-config="support"]').forEach((node) => { node.textContent = CONFIG.supportEmail; });
+  document.querySelectorAll('[data-config="support"]').forEach((node) => { node.textContent = CONFIG.supportPhone; });
 
   const offer = document.querySelector("#oferta");
   if (offer && "IntersectionObserver" in window) {

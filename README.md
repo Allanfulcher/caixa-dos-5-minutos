@@ -18,7 +18,7 @@ Edite o objeto `CONFIG` no início de `script.js`:
 
 - `checkoutUrl`: link real do checkout;
 - `metaPixelId`: ID numérico do Pixel da Meta;
-- `supportEmail`: e-mail de suporte;
+- `supportPhone`: telefone de suporte;
 - `sellerName`: nome ou razão social do vendedor.
 
 Todos os cinco CTAs usam o mesmo checkout e preservam os parâmetros `utm_*`. O Pixel dispara `PageView`, `ViewContent` e `InitiateCheckout`. O evento `Purchase` deve ser configurado e testado na página de confirmação do checkout.
